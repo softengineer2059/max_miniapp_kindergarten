@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Детский сад «Солнышко»</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <button class="back-btn" id="backBtn" style="display:none;">←</button>
+            <h1 id="pageTitle">Детский сад</h1>
+        </header>
+
+        <!-- Главное меню -->
+        <main id="mainMenu" class="page active">
+            <div class="hero">
+                <div class="hero-icon">🌞</div>
+                <h2 id="heroName">Детский сад<br>«Солнышко»</h2>
+                <p>Рады видеть вас и ваших детей!</p>
+            </div>
+
+            <div class="menu-grid">
+                <button class="menu-card" data-route="schedule">
+                    <span class="menu-icon">🕐</span>
+                    <span class="menu-label">График работы</span>
+                </button>
+                <button class="menu-card" data-route="contacts">
+                    <span class="menu-icon">📞</span>
+                    <span class="menu-label">Контакты</span>
+                </button>
+                <button class="menu-card" data-route="address">
+                    <span class="menu-icon">📍</span>
+                    <span class="menu-label">Адрес</span>
+                </button>
+                <button class="menu-card game-card" data-route="game">
+                    <span class="menu-icon">🎮</span>
+                    <span class="menu-label">Игра для детей</span>
+                </button>
+            </div>
+
+            <div class="hint">
+                <p>💡 Нажмите на карточку, чтобы открыть раздел</p>
+            </div>
+        </main>
+
+        <!-- График работы -->
+        <main id="schedulePage" class="page">
+            <div class="cards" id="scheduleList"></div>
+        </main>
+
+        <!-- Контакты -->
+        <main id="contactsPage" class="page">
+            <div class="cards" id="contactsList"></div>
+        </main>
+
+        <!-- Адрес -->
+        <main id="addressPage" class="page">
+            <div class="cards">
+                <div class="card address-card">
+                    <span>📍</span>
+                    <div>
+                        <strong>Наш адрес</strong>
+                        <p id="addressText"></p>
+                    </div>
+                </div>
+                <button class="card primary-card" id="openMapBtn">
+                    <span>🗺</span>
+                    <div>
+                        <strong>Открыть на карте</strong>
+                        <small>Построить маршрут</small>
+                    </div>
+                </button>
+                <div class="card">
+                    <span>🚶</span>
+                    <div>
+                        <strong>Как добраться</strong>
+                        <p id="transportText"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Игра -->
+        <main id="gamePage" class="page">
+            <div class="game-header">
+                <div class="game-stats">
+                    <span>⭐ Очки: <b id="score">0</b></span>
+                    <span>⏱ Время: <b id="timer">30</b>с</span>
+                </div>
+                <p class="game-instruction">Ловите солнышки! Нажимайте на ☀️, пока не вышло время.</p>
+            </div>
+
+            <div class="game-field" id="gameField"></div>
+
+            <div class="game-controls">
+                <button class="game-btn" id="startGameBtn">▶ Начать игру</button>
+                <button class="game-btn secondary" id="restartGameBtn" style="display:none;">🔄 Заново</button>
+            </div>
+
+            <div class="game-result" id="gameResult" style="display:none;"></div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
